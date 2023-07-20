@@ -35,8 +35,8 @@ return {
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
   },
   v = {
-    ["<S-j>"] = ":m '>+1<cr>gv=gv",
     ["<S-k>"] = ":m '<-2<cr>gv=gv",
+    ["<S-j>"] = ":m '>+1<cr>gv=gv",
   },
   t = {
     -- setting a mapping to false will disable it
