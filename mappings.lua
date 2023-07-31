@@ -3,20 +3,15 @@
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
+
+local mark = require "harpoon.mark"
+local ui = require "harpoon.ui"
+
 return {
   -- first key is the mode
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
-    ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    ["<leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
-      end,
-      desc = "Pick to close",
-    },
     ["L"] = false,
     ["H"] = false,
     ["<S-l>"] = {
@@ -33,6 +28,21 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+
+    -- harpoon
+    ["<leader>a"] = { mark.add_file, desc = "Add a harpoon mark" },
+    ["<C-e>"] = { ui.toggle_quick_menu, desc = "Harpoon quick menu" },
+    ["<C-j>"] = { function() ui.nav_file(1) end, desc = "Jump to the first harpoon mark" },
+    ["<c-k>"] = { function() ui.nav_file(2) end, desc = "Jump to the second harpoon mark" },
+    ["<c-l>"] = { function() ui.nav_file(3) end, desc = "Jump to the third harpoon mark" },
+    ["<c-;>"] = { function() ui.nav_file(4) end, desc = "jump to the fourth harpoon mark" },
+
+    -- window management
+    ["<leader>wh"] = { "<C-w>h" }, -- move left one window
+    ["<leader>wj"] = { "<C-w>j" }, -- move down one window
+    ["<leader>wk"] = { "<C-w>k" }, -- move up one window
+    ["<leader>wl"] = { "<C-w>l" }, -- move right one window
+    ["<leader>wx"] = { ":close<CR>" }, -- close current split
   },
   v = {
     ["<S-k>"] = ":m '<-2<cr>gv=gv",
