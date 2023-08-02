@@ -1,11 +1,6 @@
 return {
   "rcarriga/nvim-notify",
   opts = {
-    background_color = "none",
+    background_colour = "#b4befe",
   },
-  config = function()
-    require("notify").setup {
-      background_colour = "none",
-    }
-  end,
 }

@@ -8,4 +8,8 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.motion.mini-surround" },
+  -- not quite ready to embrace this one yet
+  -- { import = "astrocommunity.workflow.hardtime-nvim" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.utility.noice-nvim" },
 }
