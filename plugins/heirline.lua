@@ -4,9 +4,8 @@ return {
     opts = function(_, opts)
       local status = require "astronvim.utils.status"
 
-      opts.statusline = {                                                            -- statusline
+      opts.statusline = { -- statusline
         hl = { fg = "fg", bg = "bg" },
-        status.component.mode { mode_text = { padding = { left = 1, right = 1 } } }, -- add the mode text
         status.component.git_branch(),
         status.component.file_info {
           filetype = false,
