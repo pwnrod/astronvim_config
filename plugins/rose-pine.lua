@@ -1,7 +1,7 @@
 return {
   "rose-pine",
   opts = {
-    disable_floae_background = true,
+    disable_float_background = true,
     disable_background = true,
     -- Change specific vim highlight groups
     -- https://github.com/rose-pine/neovim/wiki/Recipes
