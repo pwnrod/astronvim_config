@@ -33,13 +33,46 @@ return {
     -- window management
     ["<leader>w"] = { name = "Windows" },
     ["<leader>wh"] = { "<C-w>h", desc = "move left one split" },
-    ["<leader>wj"] = { "<C-w>j", desc = "move down one split" }, -- move down one window
-    ["<leader>wk"] = { "<C-w>k", desc = "move up one split" }, -- move up one window
-    ["<leader>wl"] = { "<C-w>l", desc = "move right one split" }, -- move right one window
+    ["<leader>wj"] = { "<C-w>j", desc = "move down one split" },     -- move down one window
+    ["<leader>wk"] = { "<C-w>k", desc = "move up one split" },       -- move up one window
+    ["<leader>wl"] = { "<C-w>l", desc = "move right one split" },    -- move right one window
     ["<leader>wx"] = { ":close<CR>", desc = "close current split" }, -- close current split
 
     -- toggle the cursorline
     ["<leader>ue"] = { function() vim.o.cursorline = not vim.o.cursorline end, desc = "toggle cursorline" },
+
+    -- zen mode management
+    ["<leader>zz"] = {
+      function()
+        require("zen-mode").setup {
+          window = {
+            width = 90,
+            options = {},
+          },
+        }
+        require("zen-mode").toggle()
+        vim.wo.wrap = false
+        vim.wo.number = true
+        vim.wo.rnu = true
+      end,
+      desc = "Zen",
+    },
+    ["<leader>zZ"] = {
+      function()
+        require("zen-mode").setup {
+          window = {
+            width = 80,
+            options = {},
+          },
+        }
+        require("zen-mode").toggle()
+        vim.wo.wrap = false
+        vim.wo.number = false
+        vim.wo.rnu = false
+        vim.opt.colorcolumn = "0"
+      end,
+      desc = "Zen Master",
+    },
   },
   v = {
     ["<S-k>"] = ":m '<-2<cr>gv=gv",
