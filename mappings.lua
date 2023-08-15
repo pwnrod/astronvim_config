@@ -33,10 +33,13 @@ return {
     -- window management
     ["<leader>w"] = { name = "Windows" },
     ["<leader>wh"] = { "<C-w>h", desc = "move left one split" },
-    ["<leader>wj"] = { "<C-w>j", desc = "move down one split" },     -- move down one window
-    ["<leader>wk"] = { "<C-w>k", desc = "move up one split" },       -- move up one window
-    ["<leader>wl"] = { "<C-w>l", desc = "move right one split" },    -- move right one window
+    ["<leader>wj"] = { "<C-w>j", desc = "move down one split" }, -- move down one window
+    ["<leader>wk"] = { "<C-w>k", desc = "move up one split" }, -- move up one window
+    ["<leader>wl"] = { "<C-w>l", desc = "move right one split" }, -- move right one window
     ["<leader>wx"] = { ":close<CR>", desc = "close current split" }, -- close current split
+
+    -- toggle the cursorline
+    ["<leader>ue"] = { function() vim.o.cursorline = not vim.o.cursorline end, desc = "toggle cursorline" },
   },
   v = {
     ["<S-k>"] = ":m '<-2<cr>gv=gv",

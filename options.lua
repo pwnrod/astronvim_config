@@ -10,6 +10,7 @@ return {
     shiftwidth = 4,
     tabstop = 4,
     showtabline = 0,
+    cursorline = false,
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
